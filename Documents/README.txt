@@ -2,7 +2,7 @@
 
 =================== Notes to read before running ===================
 - run the robot_controller code on the RPi first as that launches the ROS Master which is used by both the laptop and RPi ROS nodes
-- build both workspaces before sourcing and running the code (I used catkin build)
+- build both workspaces before sourcing and running the code
 
 =================== wos23_rpi_ws ===================
 
@@ -29,11 +29,6 @@ rplidar_ros:
 > cd ~/WOS23-ROS/wos23_rpi_ws
 > source devel/setup.bash
 > roslaunch rplidar_ros rplidar.launch
-
-[terminal 4] (optional)
-- commands to stop/start lidar motor from spinning
-> rosservice call stop_motor 
-> rosservice call start_motor 
 
 =================== wos23_laptop_ws ===================
 
