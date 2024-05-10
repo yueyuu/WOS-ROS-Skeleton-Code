@@ -1,1 +1,0 @@
-/home/wos/WOS-ROS/wos24_laptop_ws/devel/.private/flipper_keyboard/lib/pkgconfig/flipper_keyboard.pc
