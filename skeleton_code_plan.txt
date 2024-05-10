@@ -1,0 +1,20 @@
+[flipper controller]
+- let them set up the pubs and subs
+eg. ros::Subscriber flipper_mode_sub = nh.subscribe("flipper_mode", 1, flipperModeCallback); --> ros::Subscriber flipper_mode_sub
+- let them write the main loop (tell them that they can only send the flipper command when the command is different from the current state)
+	- tell them to look at the flipperCommandCallback() fcuntion in robot_controller.py
+	
+	
+	
+===== Instructions =====
+[flipper_keyboard.cpp]
+- set up the publishers 
+- complete the code in the main while loop (ie. write the switch case)
+
+[flipper_controller.cpp]
+- set up the publishers and subscribers
+- complete the code in the main loop for autonomous and manual mode 
+	- can only publish the flipper command when the command is different from the current state of the flipper (look at the flipperCommandCallback() function in robot_controller.py to understand why)
+	
+
+- for both code will need to use the structs defined above

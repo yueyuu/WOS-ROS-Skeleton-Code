@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-    <node pkg="robot_controller" name="robot_controller_node" type="robot_controller_node" output="screen"/>
-</launch>

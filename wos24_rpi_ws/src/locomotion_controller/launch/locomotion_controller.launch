@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="locomotion_controller" name="locomotion_controller_node" type="locomotion_controller_node" output="screen"/>
+</launch>

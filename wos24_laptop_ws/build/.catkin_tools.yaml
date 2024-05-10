@@ -1,0 +1,6 @@
+devel_space: /home/wos/WOS-ROS/wos24_laptop_ws/devel
+install: false
+install_space: /home/wos/WOS-ROS/wos24_laptop_ws/install
+profile: default
+source_space: /home/wos/WOS-ROS/wos24_laptop_ws/src
+workspace: /home/wos/WOS-ROS/wos24_laptop_ws

@@ -1,0 +1,8 @@
+prefix=/home/wos/WOS-ROS/wos24_laptop_ws/install
+
+Name: flipper_keyboard
+Description: Description of flipper_keyboard
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: std_msgs roscpp

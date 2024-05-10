@@ -1,0 +1,4 @@
+scan_ssid=1
+no key_mgmt
+update_config=0
+turn off wifi 

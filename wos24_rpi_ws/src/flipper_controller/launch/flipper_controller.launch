@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="flipper_controller" name="flipper_controller_node" type="flipper_controller_node" output="screen"/>
+</launch>

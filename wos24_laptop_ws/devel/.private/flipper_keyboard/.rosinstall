@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/wos/WOS-ROS/wos24_laptop_ws/devel/.private/flipper_keyboard/setup.sh

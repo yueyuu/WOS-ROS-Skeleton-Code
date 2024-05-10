@@ -1,0 +1,1 @@
+/home/wos/WOS-ROS/wos24_laptop_ws/devel/.private/flipper_keyboard/share/flipper_keyboard/cmake/flipper_keyboardConfig-version.cmake
