@@ -99,7 +99,7 @@ def main():
 
 	rospy.Subscriber('duty_cycle', String, pwmCallback)
 	rospy.Subscriber('flipper_driver_command', UInt8, flipperCommandCallback)
-	IR_pub = rospy.Publisher('IR_status', UInt8, 10)
+	IR_pub = rospy.Publisher('IR_state', UInt8, 10)
 	rospy.loginfo("Started robot controller node!")
 
 	while not rospy.is_shutdown():
