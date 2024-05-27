@@ -165,6 +165,8 @@ int main(int argc, char **argv)
         ros::spinOnce();
 
         // ***TODO***
+        // the flipper command should only be sent out to the robot controller when the command is different from the current state
+        // eg. if the flipper command received from the keyboard is 'open' and the current state of the flipper is 'open', the command should not be forwarded to the robot controller node
 
     }
 

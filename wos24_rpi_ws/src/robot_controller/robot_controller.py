@@ -42,23 +42,31 @@ def pwmCallback(msg):
     rospy.loginfo('Received duty cycle: %f, %f', left_dc, right_dc)
 
     # set left wheel duty cycle 
-    left_dir = motor_driver_hat.CW if left_dc >= 0 else motor_driver_hat.CCW
-    motor_driver_hat.motor_movement([motor_driver_hat.M1], left_dir, left_dc)   
+    #left_dir = motor_driver_hat.CW if left_dc >= 0 else motor_driver_hat.CCW
+    if left_dc >= 0:
+        left_dir = motor_driver_hat.CCW
+    else:
+        left_dir = motor_driver_hat.CW
+    motor_driver_hat.motor_movement([motor_driver_hat.M1], left_dir, abs(left_dc))   
     
     # set right wheel duty cycle 
-    right_dir = motor_driver_hat.CW if right_dc >= 0 else motor_driver_hat.CCW
-    motor_driver_hat.motor_movement([motor_driver_hat.M2], right_dir, right_dc)   
+    #right_dir = motor_driver_hat.CW if right_dc >= 0 else motor_driver_hat.CCW
+    if right_dc >= 0:
+        right_dir = motor_driver_hat.CCW
+    else:
+        right_dir = motor_driver_hat.CW
+    motor_driver_hat.motor_movement([motor_driver_hat.M2], right_dir, abs(right_dc))   
 
 
 def flipperCommandCallback(msg):
 	flipper_command = msg.data
 	if flipper_command == FLIPPER_OPEN:
 		# turn servo anti-clockwise
-		flipper.min() # need to check again ************
+		flipper.max() # need to check how it is mounted **
 		rospy.loginfo("Opening flipper!")
 	elif flipper_command == FLIPPER_CLOSE:
 		# turn servo clockwise
-		flipper.mid() # need to check again ************
+		flipper.min() # need to check how it is mounted **
 		rospy.loginfo("Closing flipper!")
 	else:
 		rospy.loginfo("Invalid flipper command! Not updating flipper position...")

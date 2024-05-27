@@ -26,8 +26,9 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "flipper_keyboard_node");
     ros::NodeHandle nh;
 
-    ros::Publisher flipper_mode_pub = nh.advertise<std_msgs::UInt8>("flipper_mode", 1);
-    ros::Publisher flipper_movement_command_pub = nh.advertise<std_msgs::UInt8>("flipper_movement_command", 1);
+    // TODO: set up publishers
+    ros::Publisher flipper_mode_pub = 
+    ros::Publisher flipper_movement_command_pub = 
 
     std::string input_line;
     int cmd;
@@ -55,26 +56,7 @@ int main(int argc, char **argv)
                 flipper_movement_command.data = FlipperState::open;
                 flipper_movement_command_pub.publish(flipper_movement_command);
                 break;
-            case FlipperCommand::close_:
-                //close flipper
-                std::cout << "Received command: [ 2. close flipper ]\n\n";
-                flipper_movement_command.data = FlipperState::closed;
-                flipper_movement_command_pub.publish(flipper_movement_command);
-                break;
-            case FlipperCommand::manual_:
-                // manual mode
-                std::cout << "Received command: [ 3. manual mode ]\n\n";
-                flipper_mode.data = FlipperMode::manual;
-                flipper_mode_pub.publish(flipper_mode);
-                break;
-            case FlipperCommand::autonomous_:
-                // autonomous mode
-                std::cout << "Received command: [ 4. autonomous mode ]\n\n";
-                flipper_mode.data = FlipperMode::autonomous;
-                flipper_mode_pub.publish(flipper_mode);
-                break;
-            default:
-                std::cout << "No such command! Ignoring command...\n\n";
+            // TODO: complete the switch case
         }
 
     }
