@@ -9,5 +9,13 @@
 - complete the code in the main loop for autonomous and manual mode 
 	- can only publish the flipper command when the command is different from the current state of the flipper (look at the flipperCommandCallback() function in robot_controller.py to understand why)
 	
+- for both code above will need to use the structs defined in the file
+	
+[robot_controller.py]
+- located in ~/WOS-ROS-Skeleton-Code/wos24_rpi_ws/src/robot_controller
+- lines 65 and 69: the 'min' and 'max' corresponds to the servo position
+	- depending on how the flipper is fixed to the robot, these 2 lines of code need to change accordingly 
+	- trial and error after mounting the flipper to determine which one it should be 
+	
 
-- for both code will need to use the structs defined in the file
+

@@ -62,11 +62,11 @@ def flipperCommandCallback(msg):
 	flipper_command = msg.data
 	if flipper_command == FLIPPER_OPEN:
 		# turn servo anti-clockwise
-		flipper.max() # need to check how it is mounted **
+		flipper.max() # depends on how it is mounted **
 		rospy.loginfo("Opening flipper!")
 	elif flipper_command == FLIPPER_CLOSE:
 		# turn servo clockwise
-		flipper.min() # need to check how it is mounted **
+		flipper.min() # depends on how it is mounted **
 		rospy.loginfo("Closing flipper!")
 	else:
 		rospy.loginfo("Invalid flipper command! Not updating flipper position...")

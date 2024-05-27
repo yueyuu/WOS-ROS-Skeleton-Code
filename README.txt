@@ -11,16 +11,15 @@
 
 This ROS workspace contains code to be run on the Rpi. It contains the locomotion_controller_node, flipper_conroller_node and robot_controller_node.
 
-locomotion_controller_node: 
-	subscribes to the locomotion keyboard command from the laptop and calculates and publishes the desired duty cycle
-flipper_controller_node:
-        subscribes to the flipper keyboard command (flipper movement and mode change) from the laptop and publishes the desired flipper movement 
-robot_controller_node: 
-	subscribes to the desired duty cycle and flipper movement command and outputs the correct signals on the respective RPi pins to move the robot
+- locomotion_controller_node: subscribes to the locomotion keyboard command from the laptop and calculates and publishes the desired duty cycle
+
+- flipper_controller_node:subscribes to the flipper keyboard command (flipper movement and mode change) from the laptop and publishes the desired flipper movement 
+
+- robot_controller_node: subscribes to the desired duty cycle and flipper movement command and outputs the correct signals on the respective RPi pins to move the robot
 
 
 [do only once after turning on the RPi]
-> sudo pigpiod
+> sudo systemctl enable pigpiod
 
 [terminal 1]
 > cd ~/WOS-ROS/wos24_rpi_ws
@@ -41,15 +40,14 @@ robot_controller_node:
 
 This ROS workspace contains code to be run on the command laptop. It contains the teleop_twist_keyboard pkg and flipper_keyboard_node. Take note: you need to click in the correct terminal window when giving the commands.
 
+- teleop_twist_keyboard: reads the keyboard command for direction and speed and deduces the velocity to be sent to the locomotion controller
+
+- flipper_keyboard_node: reads the keyboard command for the flipper mode and movement and forwards that to the flipper controller
+
 [terminal 1]
 > cd ~/WOS-ROS/wos24_laptop_ws
 > source devel/setup.bash
 > roslaunch teleop_twist_keyboard teleop_twist_keyboard.launch
-
-[terminal 2]
-> cd ~/WOS-ROS/wos24_laptop_ws
-> source devel/setup.bash
-> roslaunch flipper_keyboard flipper_keyboard.launch
 
 [Keyboard commands for teleop]
 Reading from the keyboard  and Publishing to Twist!
@@ -75,3 +73,19 @@ w/x : increase/decrease only linear speed by 0.1
 e/c : increase/decrease only angular speed by 0.1
 
 CTRL-C to quit
+
+
+
+[terminal 2]
+> cd ~/WOS-ROS/wos24_laptop_ws
+> source devel/setup.bash
+> roslaunch flipper_keyboard flipper_keyboard.launch
+
+[Keyboard commands for flipper]
+Please choose flipper command:
+1. open flipper
+2. close flipper
+3. manual mode
+4. autonomous mode
+
+- press the corresponding number for the command on the keyboard and then press ENTER
