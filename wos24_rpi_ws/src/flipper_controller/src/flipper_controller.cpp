@@ -141,7 +141,7 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
 
     // setting up publishers and subscribers
-    // ***TODO***
+    // TODO: set up publishers and subscribers 
     ros::Subscriber flipper_mode_sub = 
     ros::Subscriber flipper_movement_command_sub = 
     ros::Subscriber IR_state_sub = nh.subscribe("IR_state", 1, IRStateCallback);
@@ -164,7 +164,7 @@ int main(int argc, char **argv)
     {
         ros::spinOnce();
 
-        // ***TODO***
+        // TODO: complete the while loop
         // the flipper command should only be sent out to the robot controller when the command is different from the current state
         // eg. if the flipper command received from the keyboard is 'open' and the current state of the flipper is 'open', the command should not be forwarded to the robot controller node
 
