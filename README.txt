@@ -12,6 +12,7 @@
 This ROS workspace contains code to be run on the Rpi. It contains the locomotion_controller_node, flipper_conroller_node and robot_controller_node.
 
 - locomotion_controller_node: subscribes to the locomotion keyboard command from the laptop and calculates and publishes the desired duty cycle
+	- if you want to reduce the minimum speed of the robot, reduce MIN_DUTY_CYCLE (line 14 of locomotion_controller.cpp); MIN_DUTY_CYCLE <= BASE_DUTY_CYCLE
 
 - flipper_controller_node:subscribes to the flipper keyboard command (flipper movement and mode change) from the laptop and publishes the desired flipper movement 
 
@@ -20,6 +21,7 @@ This ROS workspace contains code to be run on the Rpi. It contains the locomotio
 
 [do only once after turning on the RPi]
 > sudo systemctl enable pigpiod
+> sudo pigpiod
 
 [terminal 1]
 > cd ~/WOS-ROS/wos24_rpi_ws
