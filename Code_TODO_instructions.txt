@@ -2,12 +2,13 @@
 
 [flipper_keyboard.cpp]
 - set up the publishers 
-- complete the code in the main while loop (ie. write the switch case)
+- complete the code in the main while loop (ie. write the switch case) for the other 3 commands to publish out the commands received from the keyboard to flipper_controller using the structs defined
+- look at the FlipperCommand::open_ case as an example 
 
 [flipper_controller.cpp]
 - set up the publishers and subscribers
-- complete the code in the main loop for autonomous and manual mode 
-	- can only publish the flipper command when the command is different from the current state of the flipper (look at the flipperCommandCallback() function in robot_controller.py to understand why)
+- complete the code in the main loop for autonomous and manual mode of controlling the flippers 
+	- can only publish the flipper command when the command is different from the current state of the flipper eg. if the flipper is currently open, and an open command is received, that open command should not be sent to the robot_controller (look at the flipperCommandCallback() function in robot_controller.py to understand why)
 	
 - for both code above will need to use the structs defined in the file
 	
