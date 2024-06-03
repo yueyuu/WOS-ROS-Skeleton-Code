@@ -14,7 +14,7 @@
 	
 [robot_controller.py]
 - located in ~/WOS-ROS-Skeleton-Code/wos24_rpi_ws/src/robot_controller
-- lines 65 and 69: the 'min' and 'max' corresponds to the servo position
+- lines 65, 69, 91, 105: the 'min' and 'max' corresponds to the servo position
 	- depending on how the flipper is fixed to the robot, these 2 lines of code need to change accordingly 
 	- trial and error after mounting the flipper to determine which one it should be 
 	

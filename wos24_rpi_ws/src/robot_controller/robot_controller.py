@@ -88,7 +88,7 @@ def printBoardStatus():
 
 def stopMotors():
 	motor_driver_hat.motor_stop(motor_driver_hat.ALL)   # stop all DC motor
-	flipper.mid() # need to check again ************
+	flipper.min() # TODO: depends on how it is mounted **
 	print("Stopping motors and closing flipper on shutdown!")
     
 
@@ -102,7 +102,7 @@ def main():
 		rospy.loginfo("Motor driver hat: board begin failed")
 		time.sleep(2)
 	rospy.loginfo("Motor driver hat: board begin success")
-	flipper.mid() # set defualt command as close
+	flipper.min() # set default command as close # TODO: depends on how it is mounted **
 	motor_driver_hat.set_motor_pwm_frequency(1000)   # Set DC motor pwm frequency to 1kHz
 
 	rospy.Subscriber('duty_cycle', String, pwmCallback)
