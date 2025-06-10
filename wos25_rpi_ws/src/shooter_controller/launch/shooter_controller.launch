@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="shooter_controller" name="shooter_controller_node" type="shooter_controller_node" output="screen"/>
+</launch>

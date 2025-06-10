@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="shooter_keyboard" name="shooter_keyboard_node" type="shooter_keyboard_node" output="screen"/>
+</launch>

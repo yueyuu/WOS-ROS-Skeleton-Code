@@ -1,22 +1,24 @@
-===== Instructions =====
+Look for the TODO comments in the code for which part of the code file to edit.
 
-[flipper_keyboard.cpp]
-- set up the publishers 
-- complete the code in the main while loop (ie. write the switch case) for the other 3 commands to publish out the commands received from the keyboard to flipper_controller using the structs defined
-- look at the FlipperCommand::open_ case as an example 
+=========== Laptop ===========
 
-[flipper_controller.cpp]
+[shooter_keyboard.cpp]
+- set up the publisher
+- complete the code in the main while loop (ie. write the switch case) for the other commands to publish out the commands received from the keyboard to shooter_controller using the struct defined
+- look at the ShooterCommand::shoot case as an example 
+
+
+=========== RPi ===========
+
+[shooter_controller.cpp]
 - set up the publishers and subscribers
-- complete the code in the main loop for autonomous and manual mode of controlling the flippers 
-	- can only publish the flipper command when the command is different from the current state of the flipper eg. if the flipper is currently open, and an open command is received, that open command should not be sent to the robot_controller (look at the flipperCommandCallback() function in robot_controller.py to understand why)
-	
-- for both code above will need to use the structs defined in the file
+- complete the code in the main loop to publish fire and pitch commands
 	
 [robot_controller.py]
-- located in ~/WOS-ROS-Skeleton-Code/wos24_rpi_ws/src/robot_controller
-- lines 65, 69, 91, 105: the 'min' and 'max' corresponds to the servo position
-	- depending on how the flipper is fixed to the robot, these 2 lines of code need to change accordingly 
-	- trial and error after mounting the flipper to determine which one it should be 
+- located in ~/WOS-ROS-Skeleton-Code/wos25_rpi_ws/src/robot_controller
+- the SHOOTER_FIRE_PIN and SHOOTER_PITCH_PIN can be changed to whichever pin number you want to connect them to
+- when this code is terminated, it moves the shooter back to the neutral pitch position <-- so its probably a good idea to put your shooter horizontal at this position
+
 	
 
 
